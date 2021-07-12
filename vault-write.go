@@ -30,7 +30,7 @@ func main() {
 	}
 	c := VClient.Logical()
 
-	secret, err := c.Write("secret/hello", map[string]interface{}{
+	_, err = c.Write("secret/hello", map[string]interface{}{
 		"name":     "Priyanshi",
 		"username": "priya12",
 		"password": "admin1234",
@@ -39,5 +39,5 @@ func main() {
 	if err != nil {
 		log.Println(err)
 	}
-	log.Println("Secret", secret)
+	log.Println("Success: Data stored in secret/hello")
 }
